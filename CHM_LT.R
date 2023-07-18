@@ -42,7 +42,7 @@ treedrastmask <- spatrast == 3
 plot(treedrastmask, main = "treed")
 
 #random points
-randompointsground <- spatSample(groundrastmask, 2500, method = "random", replace = FALSE, na.rm = FALSE, as.raster = FALSE, as.df = TRUE, as.points = TRUE, values = TRUE, cells = TRUE, xy = TRUE, ext = NULL, warn = TRUE, weights = NULL, exp = 3, exhaustive = FALSE)
-randompointsmeadow <- spatSample(meadowrastmask, 2500, method = "random", replace = FALSE, na.rm = FALSE, as.raster = FALSE, as.df = TRUE, as.points = TRUE, values = TRUE, cells = TRUE, xy = TRUE, ext = NULL, warn = TRUE, weights = NULL, exp = 3, exhaustive = FALSE)
-randompointsshrub <- spatSample(groundrastmask, 2500, method = "random", replace = FALSE, na.rm = FALSE, as.raster = FALSE, as.df = TRUE, as.points = TRUE, values = TRUE, cells = TRUE, xy = TRUE, ext = NULL, warn = TRUE, weights = NULL, exp = 3, exhaustive = FALSE)
-randompointstreed <- spatSample(groundrastmask, 2500, method = "random", replace = FALSE, na.rm = FALSE, as.raster = FALSE, as.df = TRUE, as.points = TRUE, values = TRUE, cells = TRUE, xy = TRUE, ext = NULL, warn = TRUE, weights = NULL, exp = 3, exhaustive = FALSE)
+randompointsground <- spatSample(groundrastmask, 2500, method = "stratified", replace = FALSE, na.rm = FALSE, as.raster = FALSE, as.df = FALSE, as.points = TRUE, values = TRUE, cells = FALSE, xy = TRUE, ext = NULL, warn = TRUE, weights = NULL, exp = 3, exhaustive = FALSE)
+randompointsmeadow <- spatSample(meadowrastmask, 2500, method = "stratified", replace = FALSE, na.rm = FALSE, as.raster = FALSE, as.df = FALSE, as.points = TRUE, values = TRUE, cells = FALSE, xy = TRUE, ext = NULL, warn = TRUE, weights = NULL, exp = 3, exhaustive = FALSE)
+randompointsshrub <- spatSample(shrubrastmask, 2500, method = "stratified", replace = FALSE, na.rm = FALSE, as.raster = FALSE, as.df = FALSE, as.points = TRUE, values = TRUE, cells = FALSE, xy = TRUE, ext = NULL, warn = TRUE, weights = NULL, exp = 3, exhaustive = FALSE)
+randompointstreed <- spatSample(treedrastmask, 2500, method = "stratified", replace = FALSE, na.rm = FALSE, as.raster = FALSE, as.df = FALSE, as.points = TRUE, values = TRUE, cells = FALSE, xy = TRUE, ext = NULL, warn = TRUE, weights = NULL, exp = 3, exhaustive = FALSE)
