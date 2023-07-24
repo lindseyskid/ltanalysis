@@ -9,6 +9,8 @@ library(terra)
 library(raster)
 library(spatstat)
 
+#Hello Lindsey!
+
 #import data
 lt <- brick("NWCasc_Lindsey/Data Inputs/Middle_data/lt-gee_growth_map(2).tif")
 chm <- raster("NWCasc_Lindsey/Data Inputs/scratch_folder/CHM_with_Buffer1.tif")
