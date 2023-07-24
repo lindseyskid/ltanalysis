@@ -69,8 +69,46 @@ plot(randompointstreed, add = TRUE, cex = 0.1)
 print(randompointstreed)
 
 #extract values from points
-plot(ltspatrast)
-pixellt <- as.im(ltspatrast)
-ltmodified <- ext(581380, 618861, 5173495, 5206284)
-plot(ltmodified)
-print(ltmodified)
+extractvaluesground <- terra::extract(ltspatrast, randompointsground, fun = NULL, method = "simple")
+summary(extractvaluesground)
+
+extractvaluesmeadow <- terra::extract(ltspatrast, randompointsmeadow, fun = NULL, method = "simple")
+summary(extractvaluesmeadow)
+
+
+extractvaluesshrub <- terra::extract(ltspatrast, randompointsshrub, fun = NULL, method = "simple")
+summary(extractvaluesshrub)
+
+extractvaluestreed <- terra::extract(ltspatrast, randompointstreed, fun = NULL, method = "simple")
+summary(extractvaluestreed)
+print(extractvaluestreed)
+
+#box plot 
+?boxplot
+
+magnitude_ground <- extractvaluesground$mag
+magnitude_meadow <- extractvaluesmeadow$mag
+magnitude_shrub <- extractvaluesshrub$mag
+magnitude_treed <- extractvaluestreed$mag
+
+extracted_magnitude_list <- list(
+  ground = magnitude_ground,
+  meadow = magnitude_meadow,
+  shrub = magnitude_shrub,
+  tree = magnitude_treed
+)
+
+par(mar = c(5, 6, 4, 2))  
+boxplot(extracted_magnitude_list,   
+        out = "red", 
+        names = c("Ground", "Meadow", "Shrub", "Tree"), 
+        ylab = "Magnitude", 
+        main = "Landtrendr Magnitude of Change for Land Type", 
+        notch = TRUE,
+        col = "lightblue", 
+        ylim = c(0,1700),
+        border = "darkblue", 
+        pch = 1700)             
+
+
+
