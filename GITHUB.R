@@ -10,6 +10,7 @@ library(raster)
 library(spatstat)
 
 #Hello Lindsey!
+#howdy!
 
 #import data
 lt <- brick("NWCasc_Lindsey/Data Inputs/Middle_data/lt-gee_growth_map(2).tif")
